@@ -29,6 +29,7 @@ class Scratch3OperatorsBlocks {
             operator_random: this.random,
             operator_join: this.join,
             operator_letter_of: this.letterOf,
+            operator_index_of: this.indexOf,
             operator_length: this.length,
             operator_contains: this.contains,
             operator_mod: this.mod,
@@ -102,6 +103,15 @@ class Scratch3OperatorsBlocks {
             return '';
         }
         return str.charAt(index);
+    }
+
+    indexOf (args) {
+        const sub = Cast.toString(args.SUBST);
+        const str = Cast.toString(args.STRING);
+        if (str.includes(sub)) {
+            return str.indexOf(sub);
+        }
+        return ''; // No value if main string does not include substring.
     }
 
     length (args) {
