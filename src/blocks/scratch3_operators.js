@@ -111,7 +111,7 @@ class Scratch3OperatorsBlocks {
         if (str.includes(sub)) {
             return str.indexOf(sub);
         }
-        return ''; // No value if main string does not include substring.
+        return 0; // No value if main string does not include substring.
     }
 
     length (args) {
