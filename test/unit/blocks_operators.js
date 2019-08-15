@@ -135,6 +135,15 @@ test('letterOf', t => {
     t.end();
 });
 
+test('indexOf', t => {
+    t.strictEqual(blocks.indexOf({STRING: 'foo', SUBST: 'f'}), 1);
+    t.strictEqual(blocks.indexOf({STRING: 'foo', SUBST: 'o'}), 2);
+    t.strictEqual(blocks.indexOf({STRING: 'foo', SUBST: 'r'}), 0);
+    t.strictEqual(blocks.indexOf({STRING: 'Hello World', SUBST: 'o'}), 5);
+    t.strictEqual(blocks.indexOf({STRING: 'Hello World', SUBST: 'wor'}), 7);
+    t.end();
+});
+
 test('length', t => {
     t.strictEqual(blocks.length({STRING: ''}), 0);
     t.strictEqual(blocks.length({STRING: 'foo'}), 3);
