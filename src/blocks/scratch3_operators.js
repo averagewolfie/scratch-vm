@@ -115,14 +115,14 @@ class Scratch3OperatorsBlocks {
         return str.charAt(index);
     }
 
-    indexOf (args) {
+    /*indexOf (args) {
         const sub = Cast.toString(args.SUBST);
         const str = Cast.toString(args.STRING);
         if (str.includes(sub)) {
             return str.indexOf(sub) + 1;
         }
         return 0; // No value if main string does not include substring.
-    }
+    }*/
 
     length (args) {
         return Cast.toString(args.STRING).length;
