@@ -80,12 +80,10 @@ class Scratch3OperatorsBlocks {
     }
 
     ifElseRep (args) {
-        const sub = Cast.toString(args.SUBST);
-        const str = Cast.toString(args.STRING);
-        if (str.includes(sub)) {
-            return str.indexOf(sub) + 1;
+        if (Cast.toBoolean(args.CONDITION) == true) {
+            return Cast.toString(args.VALUE1);
         }
-        return 0; // No value if main string does not include substring.
+        return Cast.toString(args.VALUE0);
     }
 
     random (args) {
