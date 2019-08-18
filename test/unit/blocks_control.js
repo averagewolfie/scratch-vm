@@ -187,6 +187,16 @@ test('if / ifElse', t => {
     t.end();
 });
 
+test('ifElseRep', t => {
+    const rt = new Runtime();
+    const c = new Control(rt);
+    
+    t.strictEqual(c.ifElseRep({TRUE: 1, FALSE: 0, CONDITION: true}), "1"); // The block's output is string, not number.
+    t.strictEqual(c.ifElseRep({TRUE: 1, FALSE: 0, CONDITION: false}), "0");
+    t.strictEqual(c.ifElseRep({TRUE: "Apples", FALSE: "Oranges", CONDITION: true}), "Apples");
+    t.strictEqual(c.ifElseRep({TRUE: "Apples", FALSE: "Oranges", CONDITION: false}), "Oranges");
+}
+
 test('stop', t => {
     const rt = new Runtime();
     const c = new Control(rt);
