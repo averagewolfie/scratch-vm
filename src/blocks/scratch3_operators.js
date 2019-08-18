@@ -26,6 +26,7 @@ class Scratch3OperatorsBlocks {
             operator_and: this.and,
             operator_or: this.or,
             operator_not: this.not,
+            operator_ifelse: this.ifElse,
             operator_random: this.random,
             operator_join: this.join,
             operator_letter_of: this.letterOf,
@@ -76,6 +77,15 @@ class Scratch3OperatorsBlocks {
 
     not (args) {
         return !Cast.toBoolean(args.OPERAND);
+    }
+
+    ifElse (args, util) {
+        const condition = Cast.toBoolean(args.CONDITION);
+        if (condition) {
+            return Cast.toString(args.TRUE);
+        } else {
+            return Cast.toString(args.FALSE);
+        }
     }
 
     random (args) {
