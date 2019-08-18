@@ -30,7 +30,6 @@ class Scratch3ControlBlocks {
             control_wait_until: this.waitUntil,
             control_if: this.if,
             control_if_else: this.ifElse,
-            control_if_else_rep: this.ifElseRep,
             control_stop: this.stop,
             control_create_clone_of: this.createClone,
             control_delete_this_clone: this.deleteClone,
@@ -133,15 +132,6 @@ class Scratch3ControlBlocks {
             util.startBranch(1, false);
         } else {
             util.startBranch(2, false);
-        }
-    }
-
-    ifElseRep (args, util) {
-        const condition = Cast.toBoolean(args.CONDITION);
-        if (condition) {
-            return Cast.toString(args.TRUE);
-        } else {
-            return Cast.toString(args.FALSE);
         }
     }
 
