@@ -30,7 +30,7 @@ class Scratch3OperatorsBlocks {
             operator_join: this.join,
             operator_letter_of: this.letterOf,
             operator_index_of: this.indexOf,
-            operator_ifelse: this.ifElse,
+            operator_index_to: this.indexTo,
             operator_length: this.length,
             operator_contains: this.contains,
             operator_mod: this.mod,
@@ -115,7 +115,7 @@ class Scratch3OperatorsBlocks {
         return 0; // No value if main string does not include substring.
     }
 
-    ifElse (args) {
+    indexTo (args) {
         const sub = Cast.toString(args.SUBST);
         const str = Cast.toString(args.STRING);
         if (str.includes(sub)) {
