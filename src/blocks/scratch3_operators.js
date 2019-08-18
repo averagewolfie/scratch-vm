@@ -114,8 +114,8 @@ class Scratch3OperatorsBlocks {
     }
 
     indexOf (args) {
-        const sub = Cast.toString(args.SUBST);
-        const str = Cast.toString(args.STRING);
+        const sub = Cast.toString(args.SUBST).toLowerCase();
+        const str = Cast.toString(args.STRING).toLowerCase();
         if (str.includes(sub)) {
             return str.indexOf(sub) + 1;
         }
