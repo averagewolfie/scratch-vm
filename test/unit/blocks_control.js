@@ -187,7 +187,7 @@ test('if / ifElse', t => {
     t.end();
 });
 
-test('ifElseRep', t => {
+/*test('ifElseRep', t => {
     const rt = new Runtime();
     const c = new Control(rt);
     
@@ -195,7 +195,7 @@ test('ifElseRep', t => {
     t.strictEqual(c.ifElseRep({TRUE: 1, CONDITION: false, FALSE: 0}), "0");
     t.strictEqual(c.ifElseRep({TRUE: "Apples", CONDITION: true, FALSE: "Oranges"}), "Apples");
     t.strictEqual(c.ifElseRep({TRUE: "Apples", CONDITION: false, FALSE: "Oranges"}), "Oranges");
-}
+}*/
 
 test('stop', t => {
     const rt = new Runtime();
