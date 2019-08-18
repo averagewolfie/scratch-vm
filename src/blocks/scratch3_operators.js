@@ -79,15 +79,6 @@ class Scratch3OperatorsBlocks {
         return !Cast.toBoolean(args.OPERAND);
     }
 
-    ifElse (args, util) {
-        const condition = Cast.toBoolean(args.CONDITION);
-        if (condition) {
-            return Cast.toString(args.TRUE);
-        } else {
-            return Cast.toString(args.FALSE);
-        }
-    }
-
     random (args) {
         const nFrom = Cast.toNumber(args.FROM);
         const nTo = Cast.toNumber(args.TO);
@@ -115,14 +106,23 @@ class Scratch3OperatorsBlocks {
         return str.charAt(index);
     }
 
-    /*indexOf (args) {
+    indexOf (args) {
         const sub = Cast.toString(args.SUBST);
         const str = Cast.toString(args.STRING);
         if (str.includes(sub)) {
             return str.indexOf(sub) + 1;
         }
         return 0; // No value if main string does not include substring.
-    }*/
+    }
+
+    ifElse (args) {
+        const sub = Cast.toString(args.SUBST);
+        const str = Cast.toString(args.STRING);
+        if (str.includes(sub)) {
+            return str.indexOf(sub) + 1;
+        }
+        return 0; // No value if main string does not include substring.
+    }
 
     length (args) {
         return Cast.toString(args.STRING).length;
