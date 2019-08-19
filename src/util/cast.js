@@ -74,12 +74,27 @@ class Cast {
     }
 
     /**
+     * Determine if a string is case sensitive.
+     * This is typically denoted by the "case sensitive ()" block.
+     * It returns an array, which is all we need to solve for case sensitivity.
+     * @param {*} text The string (or array) as input.
+     * @return {string} The extracted, case-sensitive string, or the string to lowercase.
+     */
+
+    static isCaseSensitive (text) {
+        if (typeof text === "array") {
+            return text[0];
+        }
+        return text.toLowerCase();
+    }
+
+    /**
      * Scratch cast to string.
      * @param {*} value Value to cast to string.
      * @return {string} The Scratch-casted string value.
      */
     static toString (value) {
-        return String(value);
+        return String(Cast.isCaseSensitive(value));
     }
 
     /**
@@ -132,18 +147,8 @@ class Cast {
             n2 = NaN;
         }
         if (isNaN(n1) || isNaN(n2)) {
-            var s1;
-            var s2;
-            if (typeof v1 === "array") {
-                s1 = v1[0];
-            } else {
-                s1 = v1.toLowerCase();
-            }
-            if (typeof v2 === "array") {
-                s2 = v2[0];
-            } else {
-                s2 = v2.toLowerCase();
-            }
+            const s1 = Cast.isCaseSensitive(v1);
+            const s2 = Cast.isCaseSensitive(v2);
             if (s1 < s2) {
                 return -1;
             } else if (s1 > s2) {
