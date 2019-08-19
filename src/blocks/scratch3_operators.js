@@ -31,6 +31,7 @@ class Scratch3OperatorsBlocks {
             operator_join: this.join,
             operator_letter_of: this.letterOf,
             operator_index_of: this.indexOf,
+            operator_casesense: this.caseSense,
             operator_length: this.length,
             operator_contains: this.contains,
             operator_mod: this.mod,
@@ -114,8 +115,8 @@ class Scratch3OperatorsBlocks {
     }
 
     indexOf (args) {
-        const sub = Cast.toString(args.SUBST).toLowerCase();
-        const str = Cast.toString(args.STRING).toLowerCase();
+        const sub = Cast.toString(args.SUBST);
+        const str = Cast.toString(args.STRING);
         if (str.includes(sub)) {
             return str.indexOf(sub) + 1;
         }
@@ -126,11 +127,12 @@ class Scratch3OperatorsBlocks {
         return Cast.toString(args.STRING).length;
     }
 
+    caseSense (args) {
+        return [Cast.toString(args.STRING), true];
+    }
+
     contains (args) {
-        const format = function (string) {
-            return Cast.toString(string).toLowerCase();
-        };
-        return format(args.STRING1).includes(format(args.STRING2));
+        return Cast.toString(args.STRING1).includes(Cast.toString(args.STRING2));
     }
 
     mod (args) {
