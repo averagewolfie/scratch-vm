@@ -82,10 +82,10 @@ class Cast {
      */
 
     static isCaseSensitive (text) {
-        if (typeof text === "array") {
-            return text[0];
+        if (typeof text === "string") {
+            return text.toLowerCase();
         }
-        return text.toLowerCase();
+        return text[0];
     }
 
     /**

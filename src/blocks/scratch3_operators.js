@@ -128,7 +128,7 @@ class Scratch3OperatorsBlocks {
     }
 
     caseSense (args) {
-        return [Cast.toString(args.STRING), true];
+        return [String(args.STRING)];
     }
 
     contains (args) {
